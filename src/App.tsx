@@ -34,15 +34,9 @@ export default function App() {
   }, [selectedIndex, view]);
 
   return (
-    <div className="h-screen w-full bg-[#E4E3E0] text-[#141414] font-sans overflow-hidden flex flex-col">
-      {/* Status Bar Mockup */}
-      <div className="h-6 bg-[#141414] text-white flex items-center justify-between px-2 text-[10px] uppercase tracking-wider">
-        <span>KaiOS</span>
-        <span>15:02</span>
-      </div>
-
+    <div className="h-screen w-full bg-kaios-bg text-kaios-ink font-sans overflow-hidden flex flex-col">
       {/* Header */}
-      <div className="bg-[#F27D26] p-3 shadow-md">
+      <div className="bg-kaios-accent p-3 shadow-md">
         <h1 className="text-white font-bold text-sm uppercase tracking-widest flex items-center gap-2">
           <Smartphone size={16} />
           {view === 'menu' ? 'Main Menu' : MENU_ITEMS[selectedIndex].label}
@@ -68,15 +62,15 @@ export default function App() {
                     key={item.id}
                     className={`flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${
                       isSelected
-                        ? 'bg-[#141414] text-white scale-[1.02] shadow-lg'
-                        : 'bg-white/50 text-[#141414]'
+                        ? 'bg-kaios-ink text-white scale-[1.02] shadow-lg'
+                        : 'bg-white/50 text-kaios-ink'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <Icon size={18} className={isSelected ? 'text-[#F27D26]' : 'text-[#141414]'} />
+                      <Icon size={18} className={isSelected ? 'text-kaios-accent' : 'text-kaios-ink'} />
                       <span className="font-medium text-sm">{item.label}</span>
                     </div>
-                    {isSelected && <ChevronRight size={16} className="text-[#F27D26]" />}
+                    {isSelected && <ChevronRight size={16} className="text-kaios-accent" />}
                   </div>
                 );
               })}
@@ -90,10 +84,10 @@ export default function App() {
               className="bg-white p-4 rounded-xl shadow-sm h-full"
             >
               <div className="text-center space-y-4">
-                <div className="w-12 h-12 bg-[#F27D26]/10 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-12 h-12 bg-kaios-accent/10 rounded-full flex items-center justify-center mx-auto">
                   {(() => {
                     const Icon = MENU_ITEMS[selectedIndex].icon;
-                    return <Icon size={24} className="text-[#F27D26]" />;
+                    return <Icon size={24} className="text-kaios-accent" />;
                   })()}
                 </div>
                 <h2 className="text-lg font-bold">{MENU_ITEMS[selectedIndex].label}</h2>
@@ -103,7 +97,7 @@ export default function App() {
                 </p>
                 <div className="pt-4">
                   <div className="text-[10px] uppercase text-gray-400 font-bold tracking-tighter">System Info</div>
-                  <div className="text-xs font-mono mt-1">Vite 5 + Legacy Plugin</div>
+                  <div className="text-xs font-mono mt-1">Vite 5 + Legacy Plugin + Tailwind 3</div>
                 </div>
               </div>
             </motion.div>
@@ -112,11 +106,11 @@ export default function App() {
       </div>
 
       {/* Softkey Bar */}
-      <div className="h-10 bg-[#141414] text-white flex items-center justify-around text-[10px] font-bold uppercase tracking-tighter border-t border-white/10">
+      <div className="h-10 bg-kaios-ink text-white flex items-center justify-around text-[14px] font-bold uppercase tracking-tighter border-t border-white/10">
         <div className="w-1/3 text-center opacity-70">
           {view === 'menu' ? '' : 'Back'}
         </div>
-        <div className="w-1/3 text-center text-[#F27D26]">
+        <div className="w-1/3 text-center text-kaios-accent">
           {view === 'menu' ? 'Select' : ''}
         </div>
         <div className="w-1/3 text-center opacity-70">
