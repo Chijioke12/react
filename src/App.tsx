@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Smartphone, Home, Settings, Info, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
 
 const MENU_ITEMS = [
   { id: 'home', label: 'Home', icon: Home },
@@ -34,86 +33,56 @@ export default function App() {
   }, [selectedIndex, view]);
 
   return (
-    <div className="h-screen w-full bg-kaios-bg text-kaios-ink font-sans overflow-hidden flex flex-col">
+    <div className="h-screen flex flex-col">
       {/* Header */}
-      <div className="bg-kaios-accent p-3 shadow-md">
-        <h1 className="text-white font-bold text-sm uppercase tracking-widest flex items-center gap-2">
-          <Smartphone size={16} />
-          {view === 'menu' ? 'Main Menu' : MENU_ITEMS[selectedIndex].label}
-        </h1>
+      <div className="kai-header">
+        <Smartphone size={14} className="mr-2" />
+        <span>{view === 'menu' ? 'Main Menu' : MENU_ITEMS[selectedIndex].label}</span>
       </div>
 
       {/* Content Area */}
-      <div className="flex-1 overflow-y-auto p-2">
-        <AnimatePresence mode="wait">
-          {view === 'menu' ? (
-            <motion.div
-              key="menu"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              className="space-y-1"
-            >
-              {MENU_ITEMS.map((item, index) => {
-                const Icon = item.icon;
-                const isSelected = index === selectedIndex;
-                return (
-                  <div
-                    key={item.id}
-                    className={`flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${
-                      isSelected
-                        ? 'bg-kaios-ink text-white scale-[1.02] shadow-lg'
-                        : 'bg-white/50 text-kaios-ink'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <Icon size={18} className={isSelected ? 'text-kaios-accent' : 'text-kaios-ink'} />
-                      <span className="font-medium text-sm">{item.label}</span>
-                    </div>
-                    {isSelected && <ChevronRight size={16} className="text-kaios-accent" />}
+      <div className="kai-content">
+        {view === 'menu' ? (
+          <div>
+            {MENU_ITEMS.map((item, index) => {
+              const Icon = item.icon;
+              const isSelected = index === selectedIndex;
+              return (
+                <div
+                  key={item.id}
+                  className={`kai-list-item ${isSelected ? 'selected' : ''}`}
+                >
+                  <div className="flex items-center gap-2">
+                    <Icon size={16} />
+                    <span className="font-bold text-sm">{item.label}</span>
                   </div>
-                );
-              })}
-            </motion.div>
-          ) : (
-            <motion.div
-              key="details"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="bg-white p-4 rounded-xl shadow-sm h-full"
-            >
-              <div className="text-center space-y-4">
-                <div className="w-12 h-12 bg-kaios-accent/10 rounded-full flex items-center justify-center mx-auto">
-                  {(() => {
-                    const Icon = MENU_ITEMS[selectedIndex].icon;
-                    return <Icon size={24} className="text-kaios-accent" />;
-                  })()}
+                  {isSelected && <ChevronRight size={16} />}
                 </div>
-                <h2 className="text-lg font-bold">{MENU_ITEMS[selectedIndex].label}</h2>
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  This is the {MENU_ITEMS[selectedIndex].label.toLowerCase()} view of your KaiOS application. 
-                  Optimized for legacy browsers and feature phone hardware.
-                </p>
-                <div className="pt-4">
-                  <div className="text-[10px] uppercase text-gray-400 font-bold tracking-tighter">System Info</div>
-                  <div className="text-xs font-mono mt-1">Vite 5 + Legacy Plugin + Tailwind 3</div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="bg-white p-4 rounded-md shadow-sm h-full">
+            <div className="text-center space-y-4">
+              <h2 className="text-lg font-bold">{MENU_ITEMS[selectedIndex].label}</h2>
+              <p className="text-xs text-gray-500 leading-relaxed">
+                This is the {MENU_ITEMS[selectedIndex].label.toLowerCase()} view.
+                Optimized for KaiOS 2.5.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Softkey Bar */}
-      <div className="h-10 bg-kaios-ink text-white flex items-center justify-around text-[14px] font-bold uppercase tracking-tighter border-t border-white/10">
-        <div className="w-1/3 text-center opacity-70">
+      <div className="kai-softkey-bar">
+        <div className="text-left opacity-80">
           {view === 'menu' ? '' : 'Back'}
         </div>
-        <div className="w-1/3 text-center text-kaios-accent">
+        <div className="text-center text-[#F27D26]">
           {view === 'menu' ? 'Select' : ''}
         </div>
-        <div className="w-1/3 text-center opacity-70">
+        <div className="text-right opacity-80">
           Options
         </div>
       </div>

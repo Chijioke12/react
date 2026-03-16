@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --kai-bg: #E4E3E0;
+  --kai-ink: #141414;
+  --kai-accent: #F27D26;
+  --kai-header-height: 30px;
+  --kai-softkey-height: 32px;
+}
+
+body {
+  background-color: var(--kai-bg);
+  color: var(--kai-ink);
+  font-family: sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+.kai-header {
+  background-color: var(--kai-accent);
+  color: white;
+  height: var(--kai-header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.kai-content {
+  height: calc(100vh - var(--kai-header-height) - var(--kai-softkey-height));
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.kai-list-item {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kai-list-item.selected {
+  background-color: var(--kai-accent);
+  color: white;
+  border-color: var(--kai-accent);
+}
+
+.kai-softkey-bar {
+  background-color: var(--kai-ink);
+  color: white;
+  height: var(--kai-softkey-height);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
