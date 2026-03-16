@@ -1,12 +1,18 @@
 export default {
   plugins: {
-    'tailwindcss': {},
+    'postcss-flexbugs-fixes': {},
     'postcss-preset-env': {
-      stage: 3,
+      stage: 1,
       features: {
-        'custom-properties': false
+        'custom-properties': false, // Firefox 48 supports variables
+        'nesting-rules': true
       }
     },
-    'autoprefixer': {},
+    'autoprefixer': {
+      flexbox: 'no-2009',
+    },
+    'cssnano': {
+      preset: 'default',
+    },
   },
 };

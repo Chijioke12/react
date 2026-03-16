@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "name": "KaiOS Legacy App",
+  "description": "A React application optimized for KaiOS 2.5 (Firefox 48)",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/icon.svg",
+    "112": "/icon.svg",
+    "128": "/icon.svg"
+  },
+  "developer": {
+    "name": "AI Studio",
+    "url": "https://ai.studio"
+  },
+  "type": "web",
+  "permissions": {},
+  "installs_allowed_from": [
+    "*"
+  ],
+  "locales": {
+    "en-US": {
+      "name": "KaiOS Legacy App",
+      "description": "A React application optimized for KaiOS 2.5 (Firefox 48)"
+    }
+  },
+  "default_locale": "en-US"
+}

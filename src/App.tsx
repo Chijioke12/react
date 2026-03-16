@@ -33,10 +33,10 @@ export default function App() {
   }, [selectedIndex, view]);
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="kai-app-container">
       {/* Header */}
       <div className="kai-header">
-        <Smartphone size={14} className="mr-2" />
+        <Smartphone size={14} style={{ marginRight: '8px' }} />
         <span>{view === 'menu' ? 'Main Menu' : MENU_ITEMS[selectedIndex].label}</span>
       </div>
 
@@ -52,9 +52,9 @@ export default function App() {
                   key={item.id}
                   className={`kai-list-item ${isSelected ? 'selected' : ''}`}
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="kai-list-item-left">
                     <Icon size={16} />
-                    <span className="font-bold text-sm">{item.label}</span>
+                    <span className="kai-list-item-label">{item.label}</span>
                   </div>
                   {isSelected && <ChevronRight size={16} />}
                 </div>
@@ -62,10 +62,10 @@ export default function App() {
             })}
           </div>
         ) : (
-          <div className="bg-white p-4 rounded-md shadow-sm h-full">
-            <div className="text-center space-y-4">
-              <h2 className="text-lg font-bold">{MENU_ITEMS[selectedIndex].label}</h2>
-              <p className="text-xs text-gray-500 leading-relaxed">
+          <div className="kai-view-container">
+            <div className="kai-view-content">
+              <h2 className="kai-view-title">{MENU_ITEMS[selectedIndex].label}</h2>
+              <p className="kai-view-text">
                 This is the {MENU_ITEMS[selectedIndex].label.toLowerCase()} view.
                 Optimized for KaiOS 2.5.
               </p>
@@ -76,13 +76,13 @@ export default function App() {
 
       {/* Softkey Bar */}
       <div className="kai-softkey-bar">
-        <div className="text-left opacity-80">
+        <div className="kai-softkey-left">
           {view === 'menu' ? '' : 'Back'}
         </div>
-        <div className="text-center text-[#F27D26]">
+        <div className="kai-softkey-center">
           {view === 'menu' ? 'Select' : ''}
         </div>
-        <div className="text-right opacity-80">
+        <div className="kai-softkey-right">
           Options
         </div>
       </div>
