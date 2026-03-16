@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react';
 import legacy from '@vitejs/plugin-legacy';
+import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
 
@@ -8,6 +9,7 @@ export default defineConfig(({mode}) => {
   return {
     plugins: [
       react(),
+      tailwindcss(),
       legacy({
         targets: ['defaults', 'not IE 11', 'Firefox 48'],
       }),

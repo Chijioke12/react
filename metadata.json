@@ -1,5 +1,5 @@
 {
-  "name": "KaiOS Legacy App",
-  "description": "A mobile application optimized for KaiOS feature phones using Vite 5 and legacy browser support.",
+  "name": "Doodle Jump KaiOS",
+  "description": "A retro-style jumping game optimized for KaiOS feature phones.",
   "requestFramePermissions": []
 }

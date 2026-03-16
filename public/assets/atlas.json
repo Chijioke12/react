@@ -1,0 +1,53 @@
+{
+  "frames": {
+    "doodler_left": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      }
+    },
+    "doodler_right": {
+      "frame": {
+        "x": 32,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      }
+    },
+    "platform_green": {
+      "frame": {
+        "x": 0,
+        "y": 32,
+        "w": 48,
+        "h": 16
+      }
+    },
+    "platform_blue": {
+      "frame": {
+        "x": 48,
+        "y": 32,
+        "w": 48,
+        "h": 16
+      }
+    },
+    "platform_brown": {
+      "frame": {
+        "x": 0,
+        "y": 48,
+        "w": 48,
+        "h": 16
+      }
+    }
+  },
+  "meta": {
+    "image": "spritesheet.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 128,
+      "h": 128
+    },
+    "scale": "1"
+  }
+}

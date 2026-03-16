@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "name": "KaiOS Legacy App",
-  "description": "A React application optimized for KaiOS 2.5 (Firefox 48)",
+  "name": "Doodle Jump KaiOS",
+  "description": "A retro-style jumping game optimized for KaiOS 2.5",
   "launch_path": "/index.html",
   "icons": {
     "56": "/icon.svg",
@@ -19,8 +19,8 @@
   ],
   "locales": {
     "en-US": {
-      "name": "KaiOS Legacy App",
-      "description": "A React application optimized for KaiOS 2.5 (Firefox 48)"
+      "name": "Doodle Jump KaiOS",
+      "description": "A retro-style jumping game optimized for KaiOS 2.5"
     }
   },
   "default_locale": "en-US"

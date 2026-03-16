@@ -1,125 +1,18 @@
-:root {
-  --kai-bg: #E4E3E0;
-  --kai-ink: #141414;
-  --kai-accent: #F27D26;
-  --kai-header-height: 30px;
-  --kai-softkey-height: 32px;
-}
+@import "tailwindcss";
 
-* {
-  box-sizing: border-box;
+:root {
+  background-color: #1c1917;
+  color: #ffffff;
 }
 
 body {
-  background-color: var(--kai-bg);
-  color: var(--kai-ink);
-  font-family: sans-serif;
   margin: 0;
+  padding: 0;
   overflow: hidden;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 }
 
-.kai-header {
-  background-color: var(--kai-accent);
-  color: white;
-  height: var(--kai-header-height);
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  font-weight: bold;
-  font-size: 12px;
-  text-transform: uppercase;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
-
-.kai-content {
-  height: calc(100vh - var(--kai-header-height) - var(--kai-softkey-height));
-  overflow-y: auto;
-  padding: 4px;
-}
-
-.kai-list-item {
-  background-color: white;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  margin-bottom: 4px;
-  padding: 8px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.kai-list-item.selected {
-  background-color: var(--kai-accent);
-  color: white;
-  border-color: var(--kai-accent);
-}
-
-.kai-app-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.kai-list-item-left {
-  display: flex;
-  align-items: center;
-}
-
-.kai-list-item-label {
-  font-weight: bold;
-  font-size: 14px;
-  margin-left: 8px;
-}
-
-.kai-view-container {
-  background-color: white;
-  padding: 16px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  height: 100%;
-}
-
-.kai-view-content {
-  text-align: center;
-}
-
-.kai-view-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0 0 16px 0;
-}
-
-.kai-view-text {
-  font-size: 12px;
-  color: #666;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.kai-softkey-bar {
-  background-color: var(--kai-ink);
-  color: white;
-  height: var(--kai-softkey-height);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  padding: 0 8px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.kai-softkey-left {
-  text-align: left;
-  opacity: 0.8;
-}
-
-.kai-softkey-center {
-  text-align: center;
-  color: var(--kai-accent);
-}
-
-.kai-softkey-right {
-  text-align: right;
-  opacity: 0.8;
+canvas {
+  display: block;
+  margin: 0 auto;
 }
