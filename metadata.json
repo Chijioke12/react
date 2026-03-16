@@ -1,0 +1,5 @@
+{
+  "name": "KaiOS Legacy App",
+  "description": "A mobile application optimized for KaiOS feature phones using Vite 5 and legacy browser support.",
+  "requestFramePermissions": []
+}
